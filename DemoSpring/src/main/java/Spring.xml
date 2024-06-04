@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="atm" class="com.spring.core.DemoSpring.ATM"></bean>
+	<bean id="bank" class="com.spring.core.DemoSpring.Bank"></bean>
+	<bean id="w" class="com.spring.core.DemoSpring.Wid"></bean>
+	<bean id="car" class="com.spring.core.dependencyInjection.Car"></bean>
+	<bean id="bike" class="com.spring.core.dependencyInjection.Bike"></bean>
+	<bean id="student" class="com.spring.core.inti.Student">
+		<constructor-arg name="id" value="1"></constructor-arg>
+		<constructor-arg name="name" value="Jaseem"></constructor-arg>
+		<constructor-arg name="class_name" value="2 year"></constructor-arg>
+		<constructor-arg name="department" value="MCA"></constructor-arg>
+	</bean>
+	<bean id="teacher" class="com.spring.core.inti.Teacher">
+		<property name="id" value="1"></property>
+		<property name="name" value="JK"></property>
+		<property name="department" value="Civil"></property>
+	</bean>
+	
+	<bean id="mn" class="com.spring.core.typeDepInj.Monitor">
+		<property name="name" value="HP-4"></property>
+		<property name="company" value="HP"></property>
+	</bean>
+	
+	<bean id="computer" class="com.spring.core.typeDepInj.Compute">
+		<property name="name" value="Jaseem"></property>
+		<property name="price" value="190000"></property>
+		<property name="mn" ref="mn"></property>
+		
+	</bean>
+</beans>
